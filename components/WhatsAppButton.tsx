@@ -15,13 +15,16 @@ const WhatsAppIcon: React.FC = () => (
 
 interface WhatsAppButtonProps {
   text: string;
-  onClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
+  href: string;
+  onClick: (event: React.MouseEvent<HTMLAnchorElement>) => void;
 }
 
-const WhatsAppButton: React.FC<WhatsAppButtonProps> = ({ text, onClick }) => {
+const WhatsAppButton: React.FC<WhatsAppButtonProps> = ({ text, href, onClick }) => {
   return (
-    <button
+    <a
+      href={href}
       onClick={onClick}
+      rel="noopener noreferrer"
       className="group flex items-center justify-center w-full bg-green-500 text-white font-bold py-4 px-6 rounded-xl shadow-lg shadow-green-500/40 transform hover:scale-105 transition-all duration-300 ease-in-out focus:outline-none focus:ring-4 focus:ring-green-400 focus:ring-opacity-50 animate-pulse-whatsapp"
     >
       <style>
@@ -45,7 +48,7 @@ const WhatsAppButton: React.FC<WhatsAppButtonProps> = ({ text, onClick }) => {
         <WhatsAppIcon />
       </div>
       <span className="ml-3 text-sm md:text-lg tracking-wider uppercase">{text}</span>
-    </button>
+    </a>
   );
 };
 

@@ -115,7 +115,7 @@ const App: React.FC = () => {
         </p>
 
         <div className="w-full max-w-md">
-            <WhatsAppButton text="PROMOÇÃO NO GRUPO DO WHATSAPP" onClick={handleCTAClick} />
+            <WhatsAppButton text="PROMOÇÃO NO GRUPO DO WHATSAPP" href={ctaLink} onClick={handleCTAClick} />
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 my-8 w-full max-w-xl">
@@ -137,7 +137,7 @@ const App: React.FC = () => {
         </div>
         
         <div className="w-full max-w-md mt-10">
-            <WhatsAppButton text="PROMOÇÃO NO GRUPO DO WHATSAPP" onClick={handleCTAClick} />
+            <WhatsAppButton text="PROMOÇÃO NO GRUPO DO WHATSAPP" href={ctaLink} onClick={handleCTAClick} />
         </div>
 
         <p className="text-xs text-gray-500 mt-8">
