@@ -1,5 +1,12 @@
+
 import React from 'react';
 import WhatsAppButton from './components/WhatsAppButton';
+
+declare global {
+  interface Window {
+    kwaiq: any;
+  }
+}
 
 const BenefitItem: React.FC<{ icon: React.ReactNode; text: string }> = ({ icon, text }) => (
   <div className="flex flex-col items-center p-2 bg-slate-700/50 rounded-lg">
@@ -9,9 +16,20 @@ const BenefitItem: React.FC<{ icon: React.ReactNode; text: string }> = ({ icon, 
 );
 
 const App: React.FC = () => {
+  const ctaLink = 'https://bit.ly/emagreca-777';
 
-  const handleWhatsAppClick = () => {
-    window.location.href = 'https://bit.ly/emagreca-777';
+  const handleCTAClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    if (window.kwaiq) {
+      try {
+        window.kwaiq.track('addToCart');
+      } catch (error) {
+        console.error("Kwai pixel tracking failed:", error);
+      }
+    }
+    setTimeout(() => {
+      window.location.href = ctaLink;
+    }, 300);
   };
 
   const benefits = [
@@ -57,8 +75,8 @@ const App: React.FC = () => {
       </div>
       <main className="relative z-10 max-w-2xl w-full bg-slate-800/70 backdrop-blur-sm border border-slate-700 rounded-2xl shadow-2xl shadow-green-900/20 p-6 md:p-10 text-center flex flex-col items-center my-24">
         <a 
-          href="https://bit.ly/emagreca-777" 
-          target="_blank" 
+          href={ctaLink} 
+          onClick={handleCTAClick}
           rel="noopener noreferrer"
           aria-label="Acessar a promoção exclusiva"
         >
@@ -79,8 +97,8 @@ const App: React.FC = () => {
 
         <div className="w-full max-w-sm my-6 rounded-lg overflow-hidden shadow-lg border border-slate-700 mx-auto">
           <a 
-            href="https://bit.ly/emagreca-777" 
-            target="_blank" 
+            href={ctaLink} 
+            onClick={handleCTAClick}
             rel="noopener noreferrer"
             aria-label="Acessar a promoção exclusiva"
           >
@@ -97,7 +115,7 @@ const App: React.FC = () => {
         </p>
 
         <div className="w-full max-w-md">
-            <WhatsAppButton text="PROMOÇÃO NO GRUPO DO WHATSAPP" onClick={handleWhatsAppClick} />
+            <WhatsAppButton text="PROMOÇÃO NO GRUPO DO WHATSAPP" onClick={handleCTAClick} />
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 my-8 w-full max-w-xl">
@@ -119,7 +137,7 @@ const App: React.FC = () => {
         </div>
         
         <div className="w-full max-w-md mt-10">
-            <WhatsAppButton text="PROMOÇÃO NO GRUPO DO WHATSAPP" onClick={handleWhatsAppClick} />
+            <WhatsAppButton text="PROMOÇÃO NO GRUPO DO WHATSAPP" onClick={handleCTAClick} />
         </div>
 
         <p className="text-xs text-gray-500 mt-8">
@@ -132,8 +150,8 @@ const App: React.FC = () => {
       </footer>
       
       <a
-        href="https://bit.ly/emagreca-777"
-        target="_blank"
+        href={ctaLink}
+        onClick={handleCTAClick}
         rel="noopener noreferrer"
         aria-label="Fale conosco no WhatsApp"
         className="fixed bottom-6 right-6 z-50 bg-green-500 text-white p-4 rounded-full shadow-lg hover:scale-110 transition-transform duration-300 animate-pulse-whatsapp-float"

@@ -15,7 +15,7 @@ const WhatsAppIcon: React.FC = () => (
 
 interface WhatsAppButtonProps {
   text: string;
-  onClick: () => void;
+  onClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
 const WhatsAppButton: React.FC<WhatsAppButtonProps> = ({ text, onClick }) => {
