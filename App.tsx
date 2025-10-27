@@ -73,76 +73,79 @@ const App: React.FC = () => {
         <div className="absolute top-1/2 right-1/4 w-96 h-96 bg-emerald-500 rounded-full mix-blend-screen filter blur-3xl animate-blob animation-delay-2000"></div>
         <div className="absolute bottom-1/4 left-1/3 w-96 h-96 bg-teal-500 rounded-full mix-blend-screen filter blur-3xl animate-blob animation-delay-4000"></div>
       </div>
-      <main className="relative z-10 max-w-2xl w-full bg-slate-800/70 backdrop-blur-sm border border-slate-700 rounded-2xl shadow-2xl shadow-green-900/20 p-6 md:p-10 text-center flex flex-col items-center my-24">
-        <a 
-          href={ctaLink} 
-          onClick={handleCTAClick}
-          rel="noopener noreferrer"
-          aria-label="Acessar a promoção exclusiva"
-        >
-          <img 
-            src="https://i.imgur.com/zBIqdke.png" 
-            alt="Frasco do suplemento GraoKiseca" 
-            className="rounded-full border-4 border-green-400 shadow-lg w-32 h-32 md:w-40 md:h-40 -mt-20 md:-mt-24 mb-4 transition-transform duration-300 hover:scale-105" 
-          />
-        </a>
-
-        <h1 className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-green-300 to-emerald-500 mb-2 drop-shadow-lg">
-          GraoKiseca
-        </h1>
-
-        <p className="text-lg md:text-2xl font-semibold text-gray-200 mb-6 max-w-lg">
-          O suplemento natural que <span className="text-green-400">elimina peso</span> sem dietas restritivas e exercícios cansativos.
-        </p>
-
-        <div className="w-full max-w-sm my-6 rounded-lg overflow-hidden shadow-lg border border-slate-700 mx-auto">
-          <a 
-            href={ctaLink} 
+      <main className="relative z-10 max-w-2xl w-full bg-slate-800/70 backdrop-blur-sm border border-slate-700 rounded-2xl shadow-2xl shadow-green-900/20 text-center flex flex-col items-center my-24">
+        
+        <div className="p-6 md:p-10 w-full flex flex-col items-center">
+          <a
+            href={ctaLink}
             onClick={handleCTAClick}
             rel="noopener noreferrer"
-            aria-label="Acessar a promoção exclusiva"
+            aria-label="Acessar a promoção exclusiva - Últimas vagas"
           >
-            <img 
-                src="https://i.imgur.com/XAW1bvF.jpeg" 
-                alt="Apresentação do produto GraoKiseca"
-                className="w-full h-auto object-cover transition-transform duration-300 hover:scale-105"
+            <img
+              src="https://i.imgur.com/pl5aofn.png"
+              alt="Últimas vagas com valor promocional"
+              className="rounded-full border-4 border-green-400 shadow-lg w-32 h-32 md:w-40 md:h-40 -mt-20 md:-mt-24 mb-4 transition-transform duration-300 hover:scale-105 object-cover"
             />
           </a>
-        </div>
 
-        <p className="text-gray-300 mb-6 font-medium text-lg">
-          Clique abaixo para entrar no nosso <strong className="text-white">Grupo VIP do WhatsApp</strong> e garantir sua <strong className="text-green-400">promoção exclusiva!</strong>
-        </p>
+          <h1 className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-green-300 to-emerald-500 mb-2 drop-shadow-lg">
+            GraoKiseca
+          </h1>
 
-        <div className="w-full max-w-md">
-            <WhatsAppButton text="PROMOÇÃO NO GRUPO DO WHATSAPP" href={ctaLink} onClick={handleCTAClick} />
-        </div>
+          <p className="text-lg md:text-2xl font-semibold text-gray-200 mb-6 max-w-lg">
+            O suplemento natural que <span className="text-green-400">elimina peso</span> sem dietas restritivas e exercícios cansativos.
+          </p>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 my-8 w-full max-w-xl">
-          {benefits.map((benefit, index) => (
-            <BenefitItem key={index} icon={benefit.icon} text={benefit.text} />
-          ))}
-        </div>
+          <div className="w-full max-w-sm my-6 rounded-lg overflow-hidden shadow-lg border border-slate-700 mx-auto">
+            <a
+              href={ctaLink}
+              onClick={handleCTAClick}
+              rel="noopener noreferrer"
+              aria-label="Acessar a promoção exclusiva"
+            >
+              <img
+                  src="https://i.imgur.com/ZFCOE9P.jpeg"
+                  alt="Apresentação do produto GraoKiseca"
+                  className="w-full h-auto object-cover transition-transform duration-300 hover:scale-105"
+              />
+            </a>
+          </div>
 
-        <div className="w-full max-w-xl mt-10 text-left border-t border-slate-700 pt-8">
-            <h2 className="text-2xl font-bold text-center text-green-400 mb-6">Dúvidas Frequentes</h2>
-            <div className="space-y-6">
-                {faqs.map((faq, index) => (
-                    <div key={index}>
-                        <h3 className="font-semibold text-lg text-gray-200">{faq.question}</h3>
-                        <p className="text-gray-400 text-sm mt-1">{faq.answer}</p>
-                    </div>
-                ))}
-            </div>
-        </div>
-        
-        <div className="w-full max-w-md mt-10">
-            <WhatsAppButton text="PROMOÇÃO NO GRUPO DO WHATSAPP" href={ctaLink} onClick={handleCTAClick} />
-        </div>
+          <p className="text-gray-300 mb-6 font-medium text-lg">
+            Clique abaixo para entrar no nosso <strong className="text-white">Grupo VIP do WhatsApp</strong> e garantir sua <strong className="text-green-400">promoção exclusiva!</strong>
+          </p>
 
-        <p className="text-xs text-gray-500 mt-8">
-          *Ofertas especiais no grupo. Planos a partir de R$197. Vagas limitadas.
-        </p>
+          <div className="w-full max-w-md">
+              <WhatsAppButton text="PROMOÇÃO NO GRUPO DO WHATSAPP" href={ctaLink} onClick={handleCTAClick} />
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 my-8 w-full max-w-xl">
+            {benefits.map((benefit, index) => (
+              <BenefitItem key={index} icon={benefit.icon} text={benefit.text} />
+            ))}
+          </div>
+
+          <div className="w-full max-w-xl mt-10 text-left border-t border-slate-700 pt-8">
+              <h2 className="text-2xl font-bold text-center text-green-400 mb-6">Dúvidas Frequentes</h2>
+              <div className="space-y-6">
+                  {faqs.map((faq, index) => (
+                      <div key={index}>
+                          <h3 className="font-semibold text-lg text-gray-200">{faq.question}</h3>
+                          <p className="text-gray-400 text-sm mt-1">{faq.answer}</p>
+                      </div>
+                  ))}
+              </div>
+          </div>
+          
+          <div className="w-full max-w-md mt-10">
+              <WhatsAppButton text="PROMOÇÃO NO GRUPO DO WHATSAPP" href={ctaLink} onClick={handleCTAClick} />
+          </div>
+
+          <p className="text-sm text-gray-400 mt-8">
+            *Ofertas especiais no grupo. Planos a partir de <span className="font-bold text-lg text-green-300">R$197</span>. Vagas limitadas.
+          </p>
+        </div>
       </main>
 
       <footer className="relative z-10 mb-8 text-xs text-gray-600">
