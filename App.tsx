@@ -16,7 +16,7 @@ const BenefitItem: React.FC<{ icon: React.ReactNode; text: string }> = ({ icon, 
 );
 
 const App: React.FC = () => {
-  const ctaLink = 'https://bit.ly/emagreca-777';
+  const ctaLink = 'https://chat.whatsapp.com/Ey8YDUZXrI7AWaY9EU7gi0';
 
   const handleCTAClick = (e: React.MouseEvent) => {
     e.preventDefault();
