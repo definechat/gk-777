@@ -5,6 +5,7 @@ import WhatsAppButton from './components/WhatsAppButton';
 declare global {
   interface Window {
     kwaiq: any;
+    fbq: any;
   }
 }
 
@@ -20,11 +21,20 @@ const App: React.FC = () => {
 
   const handleCTAClick = (e: React.MouseEvent) => {
     e.preventDefault();
+    // Kwai Pixel
     if (window.kwaiq) {
       try {
         window.kwaiq.track('addToCart');
       } catch (error) {
         console.error("Kwai pixel tracking failed:", error);
+      }
+    }
+    // Facebook Pixel
+    if (window.fbq) {
+      try {
+        window.fbq('track', 'AddToCart');
+      } catch (error) {
+        console.error("Facebook pixel tracking failed:", error);
       }
     }
     setTimeout(() => {
@@ -54,7 +64,7 @@ const App: React.FC = () => {
   const faqs = [
     {
       question: "Como devo tomar o GraoKiseca?",
-      answer: "Recomendamos a ingestão de duas cápsulas ao dia, uma antes do almoço e outra antes do jantar, para melhores resultados."
+      answer: "Recomendamos a ingestão de duas cápsulas ao dia, uma antes do almoço e outra antes do jantar, для melhores resultados."
     },
     {
       question: "O produto possui contraindicações?",
