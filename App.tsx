@@ -1,4 +1,5 @@
-import React from 'react';
+
+import React, { useState, useEffect } from 'react';
 
 const WhatsAppIcon: React.FC<{ className?: string }> = ({ className }) => (
   <svg className={className} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor">
@@ -20,6 +21,31 @@ const StarIcon: React.FC<{ className?: string }> = ({ className }) => (
 
 const App: React.FC = () => {
   const ctaLink = 'whatsapp://send?phone=5584996224700&text=Olá,%20quero%20entrar%20no%20grupo!';
+  const [countdown, setCountdown] = useState(3);
+  const [isRedirecting, setIsRedirecting] = useState(false);
+
+  useEffect(() => {
+    setIsRedirecting(true);
+
+    const redirectTimer = setTimeout(() => {
+      window.location.href = ctaLink;
+    }, 3000);
+
+    const countdownTimer = setInterval(() => {
+      setCountdown((prevCount) => {
+        if (prevCount <= 1) {
+          clearInterval(countdownTimer);
+          return 0;
+        }
+        return prevCount - 1;
+      });
+    }, 1000);
+
+    return () => {
+      clearTimeout(redirectTimer);
+      clearInterval(countdownTimer);
+    };
+  }, []);
 
   const benefitCards = [
     {
@@ -68,6 +94,20 @@ const App: React.FC = () => {
 
   return (
     <div className="bg-slate-900 text-white antialiased overflow-x-hidden">
+       {isRedirecting && (
+        <div className="fixed bottom-4 right-4 bg-slate-800 border border-slate-700 text-white p-4 rounded-lg shadow-2xl z-50 animate-fade-in-up">
+            <style>{`
+                @keyframes fade-in-up {
+                    from { opacity: 0; transform: translateY(20px); }
+                    to { opacity: 1; transform: translateY(0); }
+                }
+                .animate-fade-in-up { animation: fade-in-up 0.5s ease-out forwards; }
+            `}</style>
+            <p className="text-sm text-gray-300">Você será redirecionado em...</p>
+            <p className="text-center text-3xl font-bold text-emerald-400 mt-1">{countdown}</p>
+        </div>
+      )}
+
       <main className="flex flex-col items-center">
         {/* Hero Section */}
         <section className="text-center px-4 w-full max-w-4xl mx-auto min-h-screen flex flex-col justify-center items-center pt-8">
