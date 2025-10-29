@@ -70,13 +70,13 @@ const App: React.FC = () => {
     <div className="bg-slate-900 text-white antialiased overflow-x-hidden">
       <main className="flex flex-col items-center">
         {/* Hero Section */}
-        <section className="text-center px-4 w-full max-w-4xl mx-auto min-h-screen flex flex-col justify-center items-center">
+        <section className="text-center px-4 w-full max-w-4xl mx-auto min-h-screen flex flex-col justify-center items-center pt-8">
           <h1 className="text-4xl md:text-6xl font-black mb-4 leading-tight">
             O Segredo para Emagrecer Rápido, <span className="text-emerald-500">Sem Passar Fome.</span>
           </h1>
           <p className="text-gray-400 mb-6 text-sm uppercase tracking-widest">suplemento natural</p>
           <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-10">
-            Descubra o 'grão milagroso' que está revolucionando a perda de peso. Mais potente que Ozempic e Mounjaro, porém 100% natural e seguro.
+            Descubra o 'grão milagroso' que está revolucionando a perda de peso. Mais potente que capsulas e injeçoes famosas, porém 100% natural e seguro.
           </p>
 
           <a
