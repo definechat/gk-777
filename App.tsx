@@ -19,6 +19,13 @@ const StarIcon: React.FC<{ className?: string }> = ({ className }) => (
   </svg>
 );
 
+const CheckIcon: React.FC<{ className?: string }> = ({ className }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+  </svg>
+);
+
+
 const App: React.FC = () => {
   const ctaLink = 'whatsapp://send?phone=5584996224700&text=Olá,%20quero%20entrar%20no%20grupo!';
   const [countdown, setCountdown] = useState(3);
@@ -66,7 +73,7 @@ const App: React.FC = () => {
     {
       iconPath: "M9 12.75l3 3m0 0l3-3m-3 3v-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z",
       title: '100% Natural e Seguro',
-      description: 'Produto com fórmula natural, aprovado pela ANVISA e sem relatos de efeitos colaterais.'
+      description: 'Fórmula exclusiva com ingredientes naturais, sem efeitos colaterais e aprovada por especialistas da área.'
     }
   ];
 
@@ -89,6 +96,21 @@ const App: React.FC = () => {
       result: 'Perdeu 8kg!',
       quote: 'Perdi peso sem abrir mão das comidas que amo. É incrível! O resultado veio muito mais rápido do que eu esperava.'
     }
+  ];
+
+  const provenEffects = [
+    'Diminui o peso e a obesidade',
+    'Controla o ressecamento',
+    'Previne e trata hemorróidas',
+    'Tem ação diurética e laxante',
+    'Não deixa flacidez no corpo',
+    'Elimina gordura visceral',
+    'Acelera o metabolismo',
+    'Combate a celulite',
+    'Reduz o apetite',
+    'Reduz a ansiedade',
+    'Reduz inchaço',
+    'Regula o intestino'
   ];
 
 
@@ -145,6 +167,21 @@ const App: React.FC = () => {
                   <BenefitIcon path={card.iconPath} />
                   <h3 className="text-xl font-bold mb-2">{card.title}</h3>
                   <p className="text-gray-400">{card.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Proven Effects Section */}
+        <section className="py-20 px-4 w-full">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Transforme Seu Corpo Com Efeitos Reais e Comprovados</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 text-lg text-gray-300">
+              {provenEffects.map((effect, index) => (
+                <div key={index} className="flex items-start">
+                  <CheckIcon className="w-6 h-6 text-emerald-500 mr-3 mt-1 flex-shrink-0" />
+                  <span>{effect}</span>
                 </div>
               ))}
             </div>
