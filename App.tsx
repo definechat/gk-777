@@ -114,7 +114,7 @@ const App: React.FC = () => {
           <h1 className="text-4xl md:text-6xl font-black mb-4 leading-tight">
             O Segredo para Emagrecer Rápido, <span className="text-emerald-500">Sem Passar Fome.</span>
           </h1>
-          <p className="text-gray-400 mb-6 text-sm uppercase tracking-widest">suplemento natural</p>
+          <p className="text-gray-400 mb-6 text-base uppercase tracking-widest">suplemento natural</p>
           <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-10">
             Descubra o 'grão milagroso' que está revolucionando a perda de peso. Mais potente que capsulas e injeçoes famosas, porém 100% natural e seguro.
           </p>
