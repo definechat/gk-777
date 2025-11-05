@@ -27,7 +27,7 @@ const CheckIcon: React.FC<{ className?: string }> = ({ className }) => (
 
 
 const App: React.FC = () => {
-  const ctaLink = 'whatsapp://send?phone=5584996224700&text=Olá,%20quero%20entrar%20no%20grupo!';
+  const ctaLink = 'https://chat.whatsapp.com/Ey8YDUZXrI7AWaY9EU7gi0';
   const [countdown, setCountdown] = useState(3);
   const [isRedirecting, setIsRedirecting] = useState(false);
 
@@ -143,6 +143,7 @@ const App: React.FC = () => {
 
           <a
             href={ctaLink}
+            target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-4 px-8 rounded-lg shadow-lg shadow-emerald-600/30 transform hover:scale-105 transition-all duration-300 ease-in-out text-xl uppercase tracking-wider"
           >
@@ -219,6 +220,7 @@ const App: React.FC = () => {
             </p>
             <a
               href={ctaLink}
+              target="_blank"
               rel="noopener noreferrer"
               className="inline-block bg-white hover:bg-gray-200 text-emerald-600 font-bold py-4 px-10 rounded-lg shadow-lg transform hover:scale-105 transition-all duration-300 ease-in-out text-xl uppercase tracking-wider"
             >
@@ -234,6 +236,36 @@ const App: React.FC = () => {
         <p className="mb-4">&copy; {new Date().getFullYear()} Corpo Ideal. Todos os direitos reservados.</p>
         <p className="max-w-2xl mx-auto">Disclaimer: Este produto não garante a obtenção de resultados. Qualquer referência ao desempenho de uma estratégia não deve ser interpretada como uma garantia de resultados. Os resultados podem variar de pessoa para pessoa. Para obter mais informações, consulte nossos termos de serviço.</p>
       </footer>
+
+      {/* Floating WhatsApp Button */}
+      <a
+        href={ctaLink}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Entrar no grupo VIP do WhatsApp"
+        className="fixed bottom-5 right-5 z-40 bg-green-500 text-white rounded-full p-4 shadow-xl hover:bg-green-600 transition-colors duration-300 animate-pulse-whatsapp"
+      >
+          <style>{`
+              @keyframes pulse-whatsapp {
+                  0% {
+                      transform: scale(0.95);
+                      box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+                  }
+                  70% {
+                      transform: scale(1);
+                      box-shadow: 0 0 0 10px rgba(34, 197, 94, 0);
+                  }
+                  100% {
+                      transform: scale(0.95);
+                      box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+                  }
+              }
+              .animate-pulse-whatsapp {
+                  animation: pulse-whatsapp 2s infinite;
+              }
+          `}</style>
+          <WhatsAppIcon className="w-8 h-8" />
+      </a>
     </div>
   );
 };
