@@ -115,9 +115,9 @@ const App: React.FC = () => {
 
 
   return (
-    <div className="bg-slate-900 text-white antialiased overflow-x-hidden">
+    <div className="bg-gray-100 text-black antialiased overflow-x-hidden">
        {isRedirecting && (
-        <div className="fixed bottom-4 right-4 bg-slate-800 border border-slate-700 text-white p-4 rounded-lg shadow-2xl z-50 animate-fade-in-up">
+        <div className="fixed bottom-4 right-4 bg-white border border-gray-200 text-black p-4 rounded-lg shadow-2xl z-50 animate-fade-in-up">
             <style>{`
                 @keyframes fade-in-up {
                     from { opacity: 0; transform: translateY(20px); }
@@ -125,8 +125,8 @@ const App: React.FC = () => {
                 }
                 .animate-fade-in-up { animation: fade-in-up 0.5s ease-out forwards; }
             `}</style>
-            <p className="text-sm text-gray-300">Você será redirecionado em...</p>
-            <p className="text-center text-3xl font-bold text-emerald-400 mt-1">{countdown}</p>
+            <p className="text-sm text-gray-600">Você será redirecionado em...</p>
+            <p className="text-center text-3xl font-bold text-emerald-500 mt-1">{countdown}</p>
         </div>
       )}
 
@@ -136,8 +136,8 @@ const App: React.FC = () => {
           <h1 className="text-4xl md:text-6xl font-black mb-4 leading-tight">
             O Segredo para Emagrecer Rápido, <span className="text-emerald-500">Sem Passar Fome.</span>
           </h1>
-          <p className="text-gray-400 mb-6 text-base uppercase tracking-widest">suplemento natural</p>
-          <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-10">
+          <p className="text-gray-500 mb-6 text-base uppercase tracking-widest">suplemento natural</p>
+          <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto mb-10">
             Descubra o 'grão milagroso' que está revolucionando a perda de peso. Mais potente que capsulas e injeçoes famosas, porém 100% natural e seguro.
           </p>
 
@@ -149,24 +149,24 @@ const App: React.FC = () => {
             <WhatsAppIcon className="w-7 h-7 mr-3" />
             ENTRE NO GRUPO VIP
           </a>
-          <p className="mt-4 text-gray-400 font-semibold">Vagas limitadas. Garanta a sua agora!</p>
+          <p className="mt-4 text-gray-600 font-semibold">Vagas limitadas. Garanta a sua agora!</p>
           <img 
             src="https://i.imgur.com/qAGvh3A.jpeg" 
             alt="Imagem do Produto Emagrecedor" 
-            className="mt-10 max-w-xs mx-auto rounded-lg shadow-2xl shadow-emerald-500/10" 
+            className="mt-10 max-w-xs mx-auto rounded-lg shadow-2xl shadow-emerald-900/10" 
           />
         </section>
 
         {/* Benefits Section */}
-        <section className="py-20 px-4 w-full bg-slate-800/50">
+        <section className="py-20 px-4 w-full bg-white">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Por Que Nosso Método é Infálível?</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
               {benefitCards.map((card, index) => (
-                <div key={index} className="bg-slate-800 p-6 rounded-lg flex flex-col items-center text-center border border-slate-700">
+                <div key={index} className="bg-gray-50 p-6 rounded-lg flex flex-col items-center text-center border border-gray-200">
                   <BenefitIcon path={card.iconPath} />
                   <h3 className="text-xl font-bold mb-2">{card.title}</h3>
-                  <p className="text-gray-400">{card.description}</p>
+                  <p className="text-gray-600">{card.description}</p>
                 </div>
               ))}
             </div>
@@ -177,7 +177,7 @@ const App: React.FC = () => {
         <section className="py-20 px-4 w-full">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Transforme Seu Corpo Com Efeitos Reais e Comprovados</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 text-lg text-gray-300">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 text-lg text-gray-700">
               {provenEffects.map((effect, index) => (
                 <div key={index} className="flex items-start">
                   <CheckIcon className="w-6 h-6 text-emerald-500 mr-3 mt-1 flex-shrink-0" />
@@ -194,12 +194,12 @@ const App: React.FC = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Veja Quem Já Transformou o Corpo</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {testimonials.map((testimonial, index) => (
-                <div key={index} className="bg-slate-800 p-6 rounded-lg border border-slate-700 flex flex-col items-center text-center">
+                <div key={index} className="bg-white p-6 rounded-lg border border-gray-200 shadow-lg flex flex-col items-center text-center">
                   <div className="flex items-center mb-4">
                     {[...Array(5)].map((_, i) => <StarIcon key={i} className="w-5 h-5 text-yellow-400" />)}
                   </div>
-                  <blockquote className="text-gray-300 italic mb-4">"{testimonial.quote}"</blockquote>
-                  <p className="font-bold text-white">{testimonial.name}, {testimonial.age} anos</p>
+                  <blockquote className="text-gray-700 italic mb-4">"{testimonial.quote}"</blockquote>
+                  <p className="font-bold text-black">{testimonial.name}, {testimonial.age} anos</p>
                   <p className="text-emerald-400 font-semibold">{testimonial.result}</p>
                 </div>
               ))}
@@ -230,7 +230,7 @@ const App: React.FC = () => {
       </main>
 
       {/* Footer */}
-      <footer className="bg-gray-800 text-gray-400 text-center py-8 px-6 text-xs">
+      <footer className="bg-gray-200 text-gray-600 text-center py-8 px-6 text-xs">
         <p className="mb-4">&copy; {new Date().getFullYear()} Corpo Ideal. Todos os direitos reservados.</p>
         <p className="max-w-2xl mx-auto">Disclaimer: Este produto não garante a obtenção de resultados. Qualquer referência ao desempenho de uma estratégia não deve ser interpretada como uma garantia de resultados. Os resultados podem variar de pessoa para pessoa. Para obter mais informações, consulte nossos termos de serviço.</p>
       </footer>
